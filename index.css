@@ -1,0 +1,416 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    height: 100vh;
+    border: 3px 
+    /* overflow-y: hidden; */
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    border: 3px;  /* don't remove 3px otherwise will add vertical scroll bar */
+    overflow-y: hidden;
+}
+    
+
+
+
+
+.left-side {
+    background-image: url('img/bgr.png'); /* Replace 'path-to-your-image.jpg' with the actual path to your image */
+    background-size: cover; /* Adjust the size of the background image */
+    background-repeat: no-repeat; /* Prevent the image from repeating */
+    background-color: #ffffff;
+     border-right: 2px solid #ccc;
+     /* display: flex; */ /* allows movent of left div and right di elment based on the about me button*/
+     flex-direction: column;
+     justify-content: center;
+     align-items: center; /* Center content vertically*/
+     flex: 1;
+   
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+ }
+
+.right-side {
+    margin-top: 10px;
+    background-color: #f9f9f9;
+    overflow-y: scroll;
+    border-left: 2px solid #ccc;
+    flex: 1;
+    padding: 10px;
+    transition: background-color 0.3s ease; /* Add a smooth transition effect */
+}
+
+.left-side:hover {
+    background-color: #f0f0f0; /* Change the background color on hover */
+}
+
+.right-side:hover {
+    background-color: #e6e6e6; /* Change the background color on hover */
+}
+
+/* img {
+    max-width: 100%;
+    border-radius: 50%; */
+    /* width: 150px; Adjust the size as needed */
+    /* height: 150px; Adjust the size as needed */
+    /* margin: 0 auto; */
+    /* display: block; */
+/* } */
+
+h1 {
+    color: #333;
+}
+
+p {
+    color: #121111;
+}
+
+h2 {
+    color: #333;
+    margin-top: 1;
+    margin-bottom: 0; /* Remove or reduce margin below all h2 elements */
+      
+  }
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+/* Style the profile card container */
+.profile-card {
+    margin-top: 40px;
+    height: 200px;
+    width: 200px;
+    text-align: center;
+    padding: 20px;
+    background: url('img/my_img.png') ;
+    background-size: cover;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Style the profile image */
+.profile-card img {
+    max-width: 100%;
+    border-radius: 50%;
+    width: 150px; /* Adjust the size as needed */
+    height: 150px; /* Adjust the size as needed */
+    margin: 0 auto;
+    display: block;
+}
+
+/* Style the text content */
+
+
+/* Center the content vertically */
+.center-vertically {
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */ /* allows movent of left duv elment based on the about me button*/
+    height: 100vh;
+    margin-top: 20px;
+}
+
+.animation-text {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+}     
+
+#about-me-content {
+    display: none;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#about-me-content p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+}
+.button:hover {
+    background-color: #fcfcfc; /* Change to your desired button hover color */
+}
+
+
+/* Style the button-like link */
+
+.button{
+    display: flex;
+}
+.button-link {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #9fa0a2; /* Change to your desired button color */
+    color: #f4efef;
+    text-decoration: none;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button-link:hover {
+    background-color: #2f7abb; /* Change to your desired button hover color */
+}
+
+.highlight .rightdiv-box {
+    
+    background-color: rgb(233, 231, 235);
+    background-position: bottom right;
+    /* transition: background-color 2s ease-in-out; */
+
+}
+
+
+
+
+.experience-section {
+    display: flex;
+    align-items: flex-start; /* Align items at the start */
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .company-logo {
+    flex-shrink: 0; /* Prevent the logo from growing */
+    margin-right: 20px;
+  }
+
+  .company-logo img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .experience-details {
+    flex-grow: 1;
+  }
+
+.experience-details h2 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.experience-details p {
+    font-size: 14px;
+    margin: 0;
+}
+
+.experience-details p:last-child {
+    margin-top: 10px;
+}
+
+.experience-details p.skills {
+    font-weight: bold;
+}
+
+
+/* Add styles for the "See More" link */
+.description {
+    max-height: 70px; /* Adjust the max-height as needed */
+    overflow: hidden;
+    position: relative;
+}
+
+.description p:last-child {
+    display: none;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.description.expanded {
+    max-height: none;
+}
+
+/* Style for hover effect on "See More" link */
+.description:hover p:last-child {
+    display: block;
+}
+
+
+.skill:hover img {
+    transform: scale(1.1); /* Scale the image to 110% on hover */
+    transition: transform 0.3s ease; /* Smooth transition effect */
+}
+
+/* Style the skills container */
+.skills-container {
+    display: grid;
+    margin-top: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+    justify-items: center;
+}
+
+/* Style individual skill boxes */
+.skill {
+    width: 100%; /* Each skill item takes up the full width of its grid cell */
+    height: 150px; /* Set a fixed height for all skill boxes */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the content horizontally */
+    justify-content: center; /* Center the content vertically */
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Style skill images */
+.skill img {
+    max-width: 65%; /* Make sure the images don't exceed the width of their parent container */
+    max-height: 100%; /* Make sure the images don't exceed the height of their parent container */
+    border-radius: 10px; /* Add a slight border radius for a rounded look */
+    box-shadow: 0 15px 16px rgba(6, 5, 5, 0.3);
+    transition: transform 0.3s ease,  /* Smooth transitions for shadow and hover effect */
+}
+
+/* Add a box shadow and scale on hover */
+.skill:hover img {
+    /* Improved shadow effect */
+    transform: scale(1.05); /* Slightly scale up the image on hover */
+}
+
+/* .skill p {
+    margin-top
+} */
+
+.rightdivbox-container {
+    /* text-align: center; */
+    position: relative;
+    margin-bottom: 20px;
+  }
+  .rightdiv-box {
+    border: 2px solid #000;
+    border-radius: 10px;
+    /* padding: 20px; */
+    /* margin: 20px auto; Center horizontally */
+    background-color: #f9f9f9; /* Background color for the box */
+  }
+
+  .rightdivbox-header {
+    display: inline-block;
+    min-width: 120px; /* Set your desired minimum width */
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px solid #000;
+    border-radius: 7px;
+    background-color: #d4d4d1;
+    cursor: pointer;
+    text-align: center; /* Center-align the text */
+    position: relative; /* Enable relative positioning */
+    top: 4px; /* Move the label down by 10px */
+    left: -2px; /* Move the label left by 10px */
+  }
+
+ /* Add spacing between containers */
+ .rightdivbox-container + .rightdivbox-container {
+    margin-bottom: 20px; /* Adjust the margin to create space between containers */
+  }
+
+  /* Style the toggle input */
+  .toggle {
+    display: none;
+  }
+
+  /* Style the content inside the rightdiv-box */
+  .experience-content {
+    display: none;
+  }
+
+  .skills-container {
+    display: none;
+  }
+
+  .rightdivbox-header-skill {
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px;
+    border: 2px solid #000;
+    border-radius: 7px;
+    background-color: #d4d4d1;
+    cursor: pointer;
+  }
+  /* Show the content when the checkbox is checked */
+
+  .education-section {
+    display: flex;
+    align-items: flex-start; /* Align items at the start */
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+  .education-details{
+    flex-grow: 1;
+  }
+
+.education-container{
+    display: none;
+}
+
+.experience-details a{
+    text-decoration: none;
+}
+
+.project-section {
+    display: flex;
+    align-items: flex-start; /* Align items at the start */
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+.project-container{
+    display:none
+}
+ 
+
+.leftdiv-info a {
+    display: inline-block; /* Display links horizontally */
+    margin-top: 10px;
+    margin-right: 20px;   /* Add spacing between links (adjust as needed) */
+    margin-bottom: 10px;
+    text-decoration: none; /* Remove underline from links */
+}
+
+.leftdiv-info img {
+    display: inline-block;
+    margin-right: 20px;
+    text-decoration: none;
+    border-radius: 50%; /* Make the image round */
+    overflow: hidden; /* Align images vertically in the middle of the text line */
+}
+
+.aboutme-container{
+    display: none;
+}
+
+.aboutme-details{
+    text-align:justify;
+    text-decoration: solid color(srgb red green blue);
+    font-size: 14px;
+    padding: 15px;
+   
+}
