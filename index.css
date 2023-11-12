@@ -6,6 +6,7 @@ body {
     height: 100vh;
     border: 3px 
     /* overflow-y: hidden; */
+    
 }
 
 .container {
@@ -13,28 +14,25 @@ body {
     height: 100vh;
     border: 3px;  /* don't remove 3px otherwise will add vertical scroll bar */
     overflow-y: hidden;
-}
     
 
-
-
+}
 
 .left-side {
+    width: 50%;
     background-image: url('img/bgr.png'); /* Replace 'path-to-your-image.jpg' with the actual path to your image */
     background-size: cover; /* Adjust the size of the background image */
     background-repeat: no-repeat; /* Prevent the image from repeating */
     background-color: #ffffff;
-     border-right: 2px solid #ccc;
-     /* display: flex; */ /* allows movent of left div and right di elment based on the about me button*/
-     flex-direction: column;
-     justify-content: center;
-     align-items: center; /* Center content vertically*/
-     flex: 1;
-   
+    border-right: 2px solid #ccc;
+    /* display: flex; allows movement of left div and right div elements based on the about me button */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
     transition: background-color 0.3s ease; /* Add a smooth transition effect */
  }
 
-.right-side {
+ .right-side {
     margin-top: 10px;
     background-color: #f9f9f9;
     overflow-y: scroll;
@@ -70,11 +68,14 @@ p {
 }
 
 h2 {
-    color: #333;
+     margin-top: 0%;
+    color: #f3ecec;
     margin-top: 1;
     margin-bottom: 0; /* Remove or reduce margin below all h2 elements */
       
   }
+
+
 
 ul {
     list-style-type: none;
@@ -87,8 +88,10 @@ li {
 }
 
 /* Style the profile card container */
-.profile-card {
+.profile-card { 
+    margin-bottom: 20PX;
     margin-top: 40px;
+    margin-left: 21%;
     height: 200px;
     width: 200px;
     text-align: center;
@@ -108,6 +111,7 @@ li {
     margin: 0 auto;
     display: block;
 }
+
 
 /* Style the text content */
 
@@ -145,8 +149,8 @@ li {
 
 /* Style the button-like link */
 
-.button{
-    display: flex;
+.buttons{
+    align-items: center;
 }
 .button-link {
     display: inline-block;
@@ -414,3 +418,155 @@ li {
     padding: 15px;
    
 }
+
+/* Resonsive styling for medio---------------------------------------------------------------------*/
+
+
+@media (max-width: 768px) {
+
+    .body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        height: 100vh;
+        border: 3px 
+    }
+    .container {
+        display: flex;
+        flex-direction: column; /* Change to 'row' for horizontal layout */
+        /* align-items: center; Center content horizontally */
+        /* justify-content: center; Center content vertically */
+        height: 100vh; /* Full viewport height */
+    }
+
+
+    .left-side {
+        width: 100%;
+        flex: 0.4; /* 70% of the container height */
+        background-image: url('img/bgr.png'); /* Replace 'path-to-your-image.jpg' with the actual path to your image */
+        background-size:cover; /* Adjust the size of the background image */
+        background-repeat: no-repeat; /* Prevent the image from repeating */
+        background-color: #ffffff;
+        border-right: 1px solid #ccc;
+        /* align-self: ; */
+        /*allows movent of left div and right di elment based on the about me button */
+        /* flex-direction: column; */
+        /* justify-content: center; */
+        /* align-items: center; Center content vertically */
+        transition: background-color 0.3s ease; /* Add a smooth transition effect */
+     }
+
+
+     .right-side {
+        flex: 0.7; /* 70% of the container height */
+        margin-top: 10px;
+        background-color: #f9f9f9;
+        overflow-y: scroll;
+        border-left: 2px solid #ccc;
+        /* flex: 1; */
+        padding: 10px;
+        transition: background-color 0.3s ease; /* Add a smooth transition effect */
+    }
+    
+    .profile-details{
+        padding-top: 5%;
+        /* align-items: center; Center content horizontally */
+        /* justify-content: center; */
+        display: flex;
+        flex-direction: row; /* Change to 'row' for horizontal layout */
+        
+    }
+    .profile-card{
+        margin-bottom: 0px;
+        margin-top: 0px;
+        margin-left: 0%;
+        height: 140px;
+        width: 170px;
+        text-align: none;
+        padding: 20px;
+        background: url('img/my_img.png') ;
+        background-size: cover;
+        border-radius: 40px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    .profile-info{
+       padding-top: 9%; 
+       padding-left: 10px;
+       text-align: left; 
+       height: 50%;
+    }
+
+
+    
+
+    .animated-text{
+        height: 10%;
+    } 
+
+    .profile-info h2 {
+        
+        /* margin-bottom: 0; Remove or reduce margin below all h2 elements */
+        font-size: 13px;
+        color: aliceblue;
+        margin-top: 1%; 
+        margin-bottom: 0px;
+          
+      }
+
+    .profile-info p {
+        /* color: #333; */
+        color: aliceblue;
+        margin-top: 5px;
+        /* margin-bottom:  ; Remove or reduce margin below all h2 elements */
+        font-size: 10px;
+          
+      }
+   
+      .buttons{
+        padding:10px;
+        text-align:start;
+        
+      }
+      .button-link {
+        margin-top: 5%;
+        padding:6.5px;
+        background-color: #9fa0a2; /* Change to your desired button color */
+        color: #f4efef;
+        text-decoration: none;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-right: 0px; /* Add some margin between buttons if needed */
+        font-size: 13px;
+        margin-bottom: 2%;
+    }
+
+    .leftdiv-info a {
+        display: inline-block; /* Display links horizontally */
+        margin-top: 10px;
+        margin-right: 5px;   /* Add spacing between links (adjust as needed) */
+        margin-bottom: 5px;
+        text-decoration: none; /* Remove underline from links */
+    }
+
+    .leftdiv-info img {
+        display: inline-block;
+        margin-right: 10px;
+        text-decoration: none;
+        border-radius: 50%; /* Make the image round */
+        overflow: hidden; /* Align images vertically in the middle of the text line */
+        margin-bottom: 0%;
+    }
+
+
+    .profile-elements{
+        text-align: right;
+    }
+}
+
+
+
+
