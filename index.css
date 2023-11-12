@@ -63,11 +63,11 @@ h1 {
     color: #333;
 }
 
-p {
-    color: #121111;
+.animated-text p {
+    color: #f3ecec;
 }
 
-h2 {
+.animated-text h2 {
      margin-top: 0%;
     color: #f3ecec;
     margin-top: 1;
@@ -91,7 +91,7 @@ li {
 .profile-card { 
     margin-bottom: 20PX;
     margin-top: 40px;
-    margin-left: 21%;
+    margin-left: 28%;
     height: 200px;
     width: 200px;
     text-align: center;
@@ -126,6 +126,7 @@ li {
 }
 
 .animation-text {
+    font-family: 'Arial', sans-serif;
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
