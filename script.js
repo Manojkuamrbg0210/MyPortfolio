@@ -269,3 +269,68 @@ document.addEventListener('DOMContentLoaded', function () {
          projectSection.scrollIntoView({ behavior: "smooth" });
     });
 });
+
+
+// fuction to work dropdownog sections
+document.addEventListener('DOMContentLoaded', function () {
+    const projectHeader = document.getElementById("contactme-dropdown");
+    const projectSection = document.querySelector('.contactme-container');
+
+    projectHeader.addEventListener('click', function () {
+        if (projectSection.style.display === 'none' || projectSection.style.display === '') {
+            projectSection.style.display = 'block';
+        } else {
+            projectSection.style.display = 'none';
+        }
+    });
+});
+
+
+
+
+document.addEventListener('DOMContentLoaded', function () {
+    const contactmeHeader = document.getElementById("contactme");
+    const contactmeSection = document.querySelector('.contactme-container');
+    const contactmeid = document.getElementById("contact-section");
+
+    console.log(contactmeid)
+
+
+    contactmeHeader.addEventListener("click", function (e) {
+        e.preventDefault();
+         // Add a CSS class to highlight the section
+
+         if (contactmeSection.style.display === 'none' || contactmeSection.style.display === '') {
+            contactmeSection.style.display = "block"
+        } else {
+            contactmeSection.style.display = 'none';
+        }
+        contactmeid.classList.add("highlight");
+        console.log(contactmeid)
+         // Remove the highlight class after 2 seconds
+         setTimeout(function () {
+            contactmeid.classList.remove("highlight");
+         }, 2000);
+         contactmeSection.scrollIntoView({ behavior: "smooth" });
+    });
+});
+
+
+
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxUR_uFiemLWg-56bODlbWDVoX8QFweRwynQi-L9PHLsPCw7YsAfYOuTc1-lMpsDU8FDQ/exec';
+const form = document.forms['portfolio/contactme']
+const msg = document.getElementById("msg")
+
+form.addEventListener('submit', e => {
+    e.preventDefault()
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function () {
+                msg.innerHTML = ""
+            }, 5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+})
+  

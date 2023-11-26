@@ -21,7 +21,7 @@
                             <h2 ><span class="animation-text">Welcome to My Portfolio</span></h2>
                             <h2><span class="animation-text">I am Manoj Kumar B G</span></h2>
                         </div>
-                        <p>🚀 Data Enthusiast Exploring the World of Data Engineering 🚀</p></b>
+                        <p style="color: #f3ecec;">🚀 Data Enthusiast Exploring the World of Data Engineering 🚀</p></b>
                         </center>
                         <div class="leftdiv-info">
                             <center>
@@ -45,14 +45,15 @@
                 </div>
                         
             <div class="buttons">
-                <center>
-                <a href="#aboutme" id="aboutme" class="button-link">About Me</a>
-                <a href="#experience" id="experience" class="button-link">Experience</a>
-                <a href="#skills" id="skills" class="button-link">Skills</a>
-                <a href="#education" id="education" class="button-link">Education</a>
-                <a href="#projects" id="projects" class="button-link">Projects</a>
-                <!-- <a href="#" id="contact-me-link" class="button-link">Contact Me</a> -->
-            </center>
+                <div class="button-container">
+                    
+                    <a href="#aboutme" id="aboutme" class="button-link">About Me</a>
+                    <a href="#experience" id="experience" class="button-link">Experience</a>
+                    <a href="#skills" id="skills" class="button-link">Skills</a>
+                    <a href="#education" id="education" class="button-link">Education</a>
+                    <a href="#projects" id="projects" class="button-link">Projects</a>
+                    <a href="#contactme" id="contactme" class="button-link">ContactMe</a>
+                </div>
             </div>   
         </div>
                 
@@ -182,7 +183,10 @@
                 </div>
             </div>
 
-                <div class="rightdivbox-container"  style="margin-top: 5px;">
+
+
+         
+            <div class="rightdivbox-container"  style="margin-top: 5px;">
                     <div class="education", id="education-section">
                         <label class="rightdivbox-header" id="education-dropdown" for="skills-toggle">Education</label>
                             <input type="checkbox" id="eduaction-toggle" class="toggle">
@@ -237,9 +241,52 @@
                             </div>
                         </div>
                     </div>
+                
+
+
+
+
+                <div class="rightdivbox-container"  style="margin-top: 5px;">
+                    <div class="contactme", id="contact-section">
+                        <label class="rightdivbox-header" id="contactme-dropdown" for="projects-toggle">ContactMe</label>
+                            <input type="checkbox" id="ContactMe" class="toggle">
+                        <div class="rightdiv-box" >
+                            <div class="contactme-container"  >
+                                <div class="contactme-section">
+                                    <div class="contact-title">
+                                    <!-- Contact Me</h4> -->
+                                    <h4>Get In Touch</h4>
+                                    </div>
+                                    <div class="contact">
+                                    <form name="portfolio/contactme">
+                                        <input class="contact-textarea" type="text" name="Name" placeholder="Name" required />
+                                        <input class="contact-textarea" type="email" name="Email" placeholder="Email" required />
+                                        <input class="contact-textarea" type="text" name="Subject" placeholder="Subject" />
+                                        <textarea name="Message" placeholder="Message"></textarea>
+                                        <input type="submit" value="Send Message" class="submit" />
+                                    </form>
+                                    <span id="msg"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-        <!-- end of right DIV -->
-        </div>
+                
+                
+
+        
+        </div> <!-- end of right DIV -->
+                
+    
+    </div>    
+
+    
+    <footer class="footer">
+        <small class="message">Thanks for visiting! &copy; Copyright 2023. All rights reserved.</small>
+       
+    </footer>
     <script src="script.js"></script>
 </body>
 </html>
+<!-- https://script.google.com/macros/s/AKfycbxGskr6xYn9pefOcijiG0cWUUV-s71miHtNF0_ZljTMLei93jBVb91NxkoswjMPTvY/exec -->
