@@ -1,0 +1,75 @@
+{
+  "about": {
+    "text": "As a professional with 1.5 years of experience in Data Engineering and Information Technology, I am driven by a passion for solving complex challenges. I bring to the table a strong work ethic, expertise in Data Engineering, Python and SQL, proficiency in cloud computing technologies, and a commitment to continuous learning. I am eager to apply my skills and learn more in the field of data analytics and excited to contribute to an organization's growth while expanding my own skill set."
+  },
+  "experience": [
+    {
+      "role": "Associate Analyst - Data Quality",
+      "company": "Tyson Foods India · Full-time",
+      "dates": "Sep 2022 - Present",
+      "location": "Bangalore",
+      "logo": "img/Tyson_img.jpg",
+      "logoAlt": "Tyson Foods India logo",
+      "description": [
+        "My role primarily involves designing and implementing robust data management processes, ensuring data accuracy, and facilitating seamless transfers of data from SAP and various databases to Google Cloud Platform.",
+        "I have a strong proficiency in scripting and optimizing SQL queries, views, CTEs, and stored procedures to create scalable databases while giving top priority to data integrity and security.",
+        "Currently, I am actively involved in developing a Data Validation tool using Spark. This tool enables us to analyze and compare data from diverse sources, leveraging technologies such as Pyspark, Pandas, and NumPy to guarantee the accuracy and consistency of extensive datasets within a robust data quality framework.",
+        "In addition, my role includes collaborating with cross-functional teams for testing and conducting requirements analysis, which further enhances my versatility in this position."
+      ],
+      "skills": "Skills: Git · Continuous Integration and Continuous Delivery (CI/CD) · Jenkins · DDL · Query Writing · PL/SQL · Visualization · Microsoft Power BI · Cloud Infrastructure · Test"
+    },
+    {
+      "role": "Data Engineer Intern",
+      "company": "Tyson Foods India · Full-time",
+      "dates": "Apr 2022 - Aug 2022 · 5 mos",
+      "location": "Bangalore",
+      "logo": "img/Tyson_img.jpg",
+      "logoAlt": "Tyson Foods India logo",
+      "description": [
+        "During my Internship in Software Development, I was extensively involved with the Google Cloud Platform's Big Query for managing and modifying tables as needed.",
+        "My responsibilities included performing DDL and DML operations on the tables in Big Query and ensuring the smooth transition of code from the development environment to the prod env.",
+        "I built an automated business use-case application called Automating Interlock Estimation Tool using (SaaS) Palantir. I also created BI dashboard for Data Visualization for the Markets Business Insights."
+      ],
+      "skills": "Skills: Git · Continuous Integration and Continuous Delivery (CI/CD) · Jenkins · DDL · Query Writing · PL/SQL · Visualization · Microsoft Power BI · Cloud Infrastructure · Test"
+    }
+  ],
+  "skills": [
+    { "icon": "img/Data Engineering.jpg", "label": "Data Engineering" },
+    { "icon": "img/pyton.jpg", "label": "Python" },
+    { "icon": "img/SQL.png", "label": "SQL" },
+    { "icon": "img/GCP.png", "label": "GCP" },
+    { "icon": "img/pyspark.png", "label": "PySpark" },
+    { "icon": "img/ETL.png", "label": "ETL" },
+    { "icon": "img/AWS.jpg", "label": "AWS" },
+    { "icon": "img/git.png", "label": "Git" },
+    { "icon": "img/ML.png", "label": "Machine Learning" },
+    { "icon": "img/html_css.png", "label": "HTML/CSS" },
+    { "icon": "img/js.jpg", "label": "JavaScript" }
+  ],
+  "education": [
+    {
+      "school": "Visvesvaraya Technological University",
+      "degree": "Bachelors of Engineering",
+      "field": "Computer Science and Engineering",
+      "grade": "CGPA - 8.14/10",
+      "logo": "img/VTU.png",
+      "logoAlt": "VTU logo"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Job Details Web Scrapper",
+      "link": "https://github.com/Manojkuamrbg0210/job_details_Webscrapping",
+      "description": [
+        "I have a strong proficiency in scripting and optimizing SQL queries, views, CTEs, and stored procedures to create scalable databases while giving top priority to data integrity and security."
+      ]
+    },
+    {
+      "title": "Brain Stroke Detection Using AI",
+      "link": "",
+      "description": [
+        "In the Healthcare project, two machine learning algorithms (ANN and SVM) were employed to classify brain MRI scans as Ischemic or Hemorrhage stroke, utilizing features extracted from the images through the Grey-Level Co-occurrence Matrix (GLCM) texture analysis method and TensorFlow for monitoring."
+      ]
+    }
+  ]
+}

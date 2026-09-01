@@ -1,0 +1,48 @@
+[
+  {
+    "role": "Data Engineer",
+    "company": "News Corp",
+    "dates": "Nov 2024 - Present",
+    "location": "Bangalore",
+    "logo": "img/newsuk-logo.png",
+    "logoAlt": "News UK logo",
+    "description": [
+      "Built end-to-end data pipelines to ingest data from SFTP, relational databases, and REST APIs into GCS, with transformations using Dataform.",
+      "Designed scalable ingestion frameworks for batch and near real-time processing, and modeled raw data into curated, analytics-ready datasets.",
+      "Developed and maintained domain-focused data marts to support faster reporting and business decision-making.",
+      "Optimized SQL transformations for performance and implemented unit tests plus data quality checks to improve pipeline reliability.",
+      "Collaborated with business and analytics stakeholders to deliver consumption-ready datasets with strong orchestration, logging, and monitoring practices."
+    ],
+    "skills": "Skills: GCP BigQuery · Dataform · SQL · Data Modeling · ETL/ELT · GCS · Data Marts · REST APIs · Batch & Near Real-Time Processing"
+  },
+  {
+    "role": "Associate Analyst – Data",
+    "company": "Tyson Foods India · Full-time",
+    "dates": "Sep 2022 - Nov 2024",
+    "location": "Bangalore",
+    "logo": "img/Tyson_img.jpg",
+    "logoAlt": "Tyson Foods India logo",
+    "description": [
+      "Designed and managed end-to-end data pipelines using Python and SQL to ingest data from legacy systems into GCP BigQuery.",
+      "Used Git, DICE (ETL tool), and Airflow for version control, orchestration, and reliable ETL deployment workflows.",
+      "Developed and optimized SQL scripts, views, and CTEs for efficient data architecture, ingestion, and cleaning in batch and real-time pipelines.",
+      "Built automated PySpark-based data validation workflows to compare and reconcile data across legacy systems and the data warehouse.",
+      "Worked in Agile teams with analysts and business stakeholders to improve data accuracy, reliability, and reporting readiness."
+    ],
+    "skills": "Skills: Python · PySpark · SQL · GCP BigQuery · Airflow · Data Validation · ETL/ELT · Git · Agile"
+  },
+  {
+    "role": "Data Engineer Intern",
+    "company": "Tyson Foods India · Full-time",
+    "dates": "Apr 2022 - Sep 2022",
+    "location": "Bangalore",
+    "logo": "img/Tyson_img.jpg",
+    "logoAlt": "Tyson Foods India logo",
+    "description": [
+      "Performed DDL and DML operations in GCP BigQuery to support software development and data engineering use cases.",
+      "Built the Automating Interlock Estimation Tool on the Palantir SaaS platform for business process automation.",
+      "Developed BI dashboards for marketing analytics to deliver actionable insights to stakeholders."
+    ],
+    "skills": "Skills: GCP BigQuery · SQL · DDL/DML · Palantir · BI Dashboards · Data Visualization"
+  }
+]
