@@ -1,0 +1,16 @@
+[
+  {
+    "title": "Job Details Web Scrapper",
+    "link": "https://github.com/Manojkuamrbg0210/job_details_Webscrapping",
+    "description": [
+      "I have a strong proficiency in scripting and optimizing SQL queries, views, CTEs, and stored procedures to create scalable databases while giving top priority to data integrity and security."
+    ]
+  },
+  {
+    "title": "Brain Stroke Detection Using AI",
+    "link": "",
+    "description": [
+      "In the Healthcare project, two machine learning algorithms (ANN and SVM) were employed to classify brain MRI scans as Ischemic or Hemorrhage stroke, utilizing features extracted from the images through the Grey-Level Co-occurrence Matrix (GLCM) texture analysis method and TensorFlow for monitoring."
+    ]
+  }
+]

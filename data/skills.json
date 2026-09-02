@@ -1,0 +1,13 @@
+[
+  { "icon": "img/Data Engineering.jpg", "label": "Data Engineering" },
+  { "icon": "img/pyton.jpg", "label": "Python" },
+  { "icon": "img/SQL.png", "label": "SQL" },
+  { "icon": "img/GCP.png", "label": "GCP" },
+  { "icon": "img/pyspark.png", "label": "PySpark" },
+  { "icon": "img/ETL.png", "label": "ETL" },
+  { "icon": "img/AWS.jpg", "label": "AWS" },
+  { "icon": "img/git.png", "label": "Git" },
+  { "icon": "img/ML.png", "label": "Machine Learning" },
+  { "icon": "img/html_css.png", "label": "HTML/CSS" },
+  { "icon": "img/js.jpg", "label": "JavaScript" }
+]
