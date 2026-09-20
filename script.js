@@ -5,11 +5,12 @@ const APP_CONFIG = {
         skills: "data/skills.json",
         education: "data/education.json",
         projects: "data/projects.json",
-        certifications: "data/certifications.json"
+        certifications: "data/certifications.json",
+        askMe: "data/ask-me.json"
     },
     images: {
         profileFront: "img/manoj-profile-img.png",
-        profileBack: "img/ai_avatar_svg.png"
+        profileBack: "img/ai_avatar_svg.png "
     }
 };
 
@@ -687,16 +688,17 @@ let chatbotContext = {
 };
 
 async function fetchPortfolioData() {
-    const [about, experience, skills, education, projects, certifications] = await Promise.all([
+    const [about, experience, skills, education, projects, certifications, askMe] = await Promise.all([
         fetchJson(APP_CONFIG.dataFiles.about),
         fetchJson(APP_CONFIG.dataFiles.experience),
         fetchJson(APP_CONFIG.dataFiles.skills),
         fetchJson(APP_CONFIG.dataFiles.education),
         fetchJson(APP_CONFIG.dataFiles.projects),
-        fetchJson(APP_CONFIG.dataFiles.certifications)
+        fetchJson(APP_CONFIG.dataFiles.certifications),
+        fetchJson(APP_CONFIG.dataFiles.askMe)
     ]);
 
-    return { about, experience, skills, education, projects, certifications };
+    return { about, experience, skills, education, projects, certifications, askMe };
 }
 
 // Load all portfolio data
@@ -789,7 +791,7 @@ function initChatbot() {
         // Get bot response based on selected topic
         const botResponse = getBotResponse(topic);
         console.log('Bot response:', botResponse);
-        
+
         // Update agent response with scrollable text
         agentResponse.innerHTML = `<p>${escapeHtml(botResponse)}</p>`;
         agentResponse.scrollTop = 0;
@@ -831,50 +833,101 @@ function initChatbot() {
 }
 
 function getBotResponse(topic) {
+    const copy = portfolioData.askMe || {};
+
+    const fill = (template, values) =>
+        (template || '').replace(/\{(\w+)\}/g, (_, key) => (values[key] ?? ''));
+
+    const firstSentence = (text) => {
+        if (!text) return '';
+        const match = text.match(/[^.!?]+[.!?]/);
+        return (match ? match[0] : text).trim();
+    };
+
     const summarizeTopic = (topic) => {
         switch (topic) {
             case 'about':
-                return portfolioData.about?.text || "I'm a Data Engineer and Data Enthusiast focused on solving complex data challenges using modern tools and cloud platforms.";
+                return portfolioData.about?.text || copy.about?.fallback || '';
             case 'skills': {
-                if (portfolioData.skills?.length) {
-                    const skillList = portfolioData.skills.map(s => s.label).join(', ');
-                    return `Key skills: ${skillList}.`;
-                }
-                return "Key skills include Data Engineering, SQL, Python, PySpark, GCP, AWS, and ETL.";
+                const config = copy.skills || {};
+                const labels = (portfolioData.skills || []).map(s => s.label);
+                if (!labels.length) return config.fallback;
+
+                const cloudMatcher = new RegExp(config.cloudPattern, 'i');
+                const cloud = labels.filter(l => cloudMatcher.test(l));
+                const core = labels.filter(l => !cloud.includes(l)).slice(0, config.coreCount);
+
+                return fill(config.template, {
+                    core: core.join(', '),
+                    cloud: cloud.length ? fill(config.cloudTemplate, { cloudList: cloud.join(' and ') }) : ''
+                });
             }
             case 'experience': {
-                if (portfolioData.experience?.length) {
-                    const current = portfolioData.experience[0];
-                    const highlight = current.description ? current.description[0] : '';
-                    return `Currently ${current.role} at ${current.company} (${current.dates}). ${highlight}`.trim();
-                }
-                return "Currently an Associate Analyst at Tyson Foods India, focusing on data management and validation.";
+                const config = copy.experience || {};
+                const roles = portfolioData.experience || [];
+                if (!roles.length) return config.fallback;
+
+                const cleanCompany = (name) => (name || '').split('·')[0].trim();
+                const current = roles[0];
+
+                return fill(config.template, {
+                    role: current.role,
+                    company: cleanCompany(current.company),
+                    dates: current.dates,
+                    highlight: firstSentence(current.description?.[0]),
+                    count: roles.length,
+                    previous: roles[1]
+                        ? fill(config.previousTemplate, {
+                            role: roles[1].role,
+                            company: cleanCompany(roles[1].company)
+                        })
+                        : ''
+                });
             }
             case 'projects': {
-                if (portfolioData.projects?.length) {
-                    const projects = portfolioData.projects.map(p => p.title).join(', ');
-                    return `Projects include: ${projects}.`;
-                }
-                return "Projects include data validation tools, BI dashboards, and machine learning applications.";
+                const config = copy.projects || {};
+                const projects = portfolioData.projects || [];
+                if (!projects.length) return config.fallback;
+
+                const items = projects.map(p => fill(config.itemTemplate, {
+                    title: p.title,
+                    summary: firstSentence(p.description?.[0])
+                }));
+
+                return fill(config.template, { projects: items.join(' ') });
             }
             case 'education': {
-                if (portfolioData.education?.length) {
-                    const edu = portfolioData.education[0];
-                    return `${edu.degree} in ${edu.field} from ${edu.school}.`;
-                }
-                return "Computer Science and Engineering with a specialization in Data Engineering.";
+                const config = copy.education || {};
+                const edu = portfolioData.education?.[0];
+                if (!edu) return config.fallback;
+
+                return fill(config.template, {
+                    field: edu.field,
+                    school: edu.school,
+                    grade: edu.grade
+                        ? fill(config.gradeTemplate, { grade: edu.grade.replace(/^CGPA\s*-\s*/i, 'a CGPA of ') })
+                        : ''
+                });
             }
             case 'certifications': {
-                if (portfolioData.certifications?.length) {
-                    const certList = portfolioData.certifications
-                        .map(c => `${c.title} — ${c.issuer}${c.date ? ` (${c.date})` : ''}`)
-                        .join('; ');
-                    return `Certifications: ${certList}.`;
-                }
-                return "Certified Google Cloud Professional Data Engineer.";
+                const config = copy.certifications || {};
+                const certs = portfolioData.certifications || [];
+                if (!certs.length) return config.fallback;
+
+                const cert = certs[0];
+                const others = certs.length - 1;
+
+                return fill(config.template, {
+                    title: cert.title,
+                    issuer: cert.issuer,
+                    date: cert.date ? fill(config.dateTemplate, { date: cert.date }) : '',
+                    extra: others > 0
+                        ? fill(config.extraTemplate, { count: others, plural: others > 1 ? 's' : '' })
+                        : ''
+                });
             }
             default:
-                return "I can summarize skills, experience, projects, education, or background.";
+                return copy.default || '';
         }
     };
 

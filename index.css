@@ -18,6 +18,12 @@
     --shadow-lg: 0 10px 28px rgba(102, 126, 234, 0.2);
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -27,6 +33,7 @@ body {
     border: 3px;
     color: var(--text-dark);
     transition: all 0.3s ease;
+    overflow-x: hidden;
 }
 
 .container {
@@ -246,7 +253,7 @@ li {
 
 .agent-options {
     display: grid;
-    grid-template-columns: repeat(6, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(96px, 1fr));
     gap: 8px;
     justify-content: stretch;
     align-items: center;
@@ -301,9 +308,10 @@ li {
 }
 
 .option-text {
-    font-size: 12px;
+    font-size: clamp(10px, 2.4vw, 12px);
     text-align: center;
     line-height: 1.2;
+    overflow-wrap: anywhere;
 }
 
 .agent-response {
@@ -1454,9 +1462,6 @@ li {
             font-size: 24px;
         }
     }
-    }
-        }
-    }
 
   .contactme-section .contact-title h4 {
     animation: fadeIn 1.5s ease-out;
@@ -1484,5 +1489,193 @@ li {
     margin-top: 10px;
     display: block;
   }
-  
+
+/* ---------------------------------------------------------------
+   Fluid / responsive layout (overrides earlier fixed-size rules)
+   --------------------------------------------------------------- */
+
+img {
+    max-width: 100%;
+}
+
+@media (max-width: 900px) {
+    html,
+    body {
+        height: auto;
+        min-height: 100%;
+    }
+
+    .container {
+        flex-direction: column;
+        height: auto;
+        min-height: 100vh;
+        /* dvh keeps the layout correct when mobile browser bars show/hide */
+        min-height: 100dvh;
+        overflow-y: visible;
+    }
+
+    .left-side,
+    .right-side {
+        width: 100%;
+        flex: 0 0 auto;
+        border: none;
+        overflow-y: visible;
+    }
+
+    .left-side {
+        padding: 16px 14px 20px;
+    }
+
+    .right-side {
+        margin-top: 0;
+        padding: 14px;
+    }
+
+    .profile-details {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 16px;
+        padding-top: 0;
+    }
+
+    .profile-card,
+    .profile-card img {
+        width: clamp(96px, 30vw, 150px);
+        height: clamp(96px, 30vw, 150px);
+    }
+
+    .profile-card {
+        flex: 0 0 auto;
+        margin: 0;
+        padding: 0;
+        border-radius: 18px;
+    }
+
+    .profile-card::after {
+        width: clamp(38px, 12vw, 60px);
+        height: clamp(38px, 12vw, 60px);
+    }
+
+    .profile-info {
+        flex: 1 1 auto;
+        min-width: 0;
+        padding: 0;
+        height: auto;
+        text-align: left;
+    }
+
+    .profile-info center,
+    .leftdiv-info center {
+        text-align: left;
+    }
+
+    .animated-text {
+        height: auto;
+    }
+
+    .profile-info h2,
+    .animated-text h2 {
+        font-size: clamp(15px, 4.2vw, 24px);
+        margin: 2px 0;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+    }
+
+    .animation-text {
+        white-space: normal;
+        overflow-wrap: anywhere;
+    }
+
+    .profile-info p {
+        font-size: clamp(11px, 3.2vw, 15px);
+        margin-top: 8px;
+        text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+    }
+
+    .leftdiv-info a,
+    .leftdiv-info img {
+        margin-right: 12px;
+    }
+
+    .agent-section {
+        margin: 14px 0 0;
+    }
+
+    .agent-options {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .agent-option-btn {
+        min-height: 58px;
+        padding: 8px 4px;
+    }
+
+    .agent-response {
+        min-height: 110px;
+        max-height: 40vh;
+        overflow-y: auto;
+    }
+
+    .rightdivbox-header {
+        display: block;
+        width: 100%;
+        min-width: 0;
+        left: 0;
+    }
+
+    .experience-section,
+    .education-section,
+    .certification-section,
+    .project-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin: 12px;
+        padding: 14px;
+    }
+
+    .experience-section:hover,
+    .education-section:hover,
+    .certification-section:hover,
+    .project-section:hover {
+        /* horizontal shift causes overflow on narrow screens */
+        transform: none;
+    }
+
+    .skills-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .contact form {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-details {
+        gap: 12px;
+    }
+
+    .agent-options {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .option-emoji {
+        font-size: 18px;
+    }
+
+    .rightdivbox-header {
+        font-size: 15px;
+        padding: 10px 12px;
+    }
+
+    .aboutme-details,
+    .contactme-details {
+        font-size: 13px;
+        padding: 12px;
+    }
+}
+
 
