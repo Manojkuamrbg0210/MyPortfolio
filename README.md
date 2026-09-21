@@ -56,6 +56,15 @@ Update only these keys if file names move:
 - `APP_CONFIG.dataFiles.projects`
 - `APP_CONFIG.dataFiles.certifications`
 
+### Ask Me Responses
+
+The wording of each "Ask Me" answer lives in `data/ask-me.json`. Edit the templates there instead of the logic.
+
+- `{token}` placeholders are filled from `data/*.json` (for example `{role}`, `{company}`, `{dates}`)
+- `fallback` is shown when the matching data file has no entries
+- `skills.cloudPattern` controls which skill labels are treated as cloud platforms
+- `skills.coreCount` controls how many non-cloud skills are listed
+
 ## Content Updates
 
 Edit JSON files in `data/`:
@@ -66,6 +75,7 @@ Edit JSON files in `data/`:
 - `data/education.json`
 - `data/projects.json`
 - `data/certifications.json`
+- `data/ask-me.json`
 
 After editing content, refresh the browser. The app uses cache-busting for JSON fetches to reflect updates quickly.
 

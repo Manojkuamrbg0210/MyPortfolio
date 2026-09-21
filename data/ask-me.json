@@ -1,0 +1,34 @@
+{
+  "skills": {
+    "coreCount": 5,
+    "cloudPattern": "gcp|aws|azure|cloud|bigquery",
+    "template": "My day-to-day toolkit is {core} — built around designing pipelines that stay fast and trustworthy at scale.{cloud}",
+    "cloudTemplate": " On the cloud side I work across {cloudList}.",
+    "fallback": "My day-to-day toolkit is Python, PySpark and SQL, built around designing pipelines that stay fast and trustworthy at scale."
+  },
+  "experience": {
+    "template": "I'm a currently working as {role} at {company} ({dates}). {highlight}{previous} Across {count} roles the through-line has been turning messy source data into something teams can actually rely on.",
+    "previousTemplate": " Before this, I spent time as {role} at {company}.",
+    "fallback": "Right now I'm a Data Engineer at News Corp, building ingestion frameworks and curated datasets for analytics teams."
+  },
+  "projects": {
+    "template": "Outside of work I like building things end to end. {projects} Both started as curiosity and ended up teaching me more than any tutorial would have.",
+    "itemTemplate": "{title} — {summary}",
+    "fallback": "Outside of work I like building things end to end — web scrapers, dashboards, and a few machine learning experiments."
+  },
+  "education": {
+    "template": "I studied {field} at {school}{grade}. That's where the interest in data systems started, and I've been building on it ever since.",
+    "gradeTemplate": " and finished with {grade}",
+    "fallback": "I studied Computer Science and Engineering, which is where my interest in data systems started."
+  },
+  "certifications": {
+    "template": "I earned the {title} from {issuer}{date} — a solid checkpoint for the cloud data work I do every day.{extra}",
+    "dateTemplate": " in {date}",
+    "extraTemplate": " I also hold {count} other credential{plural}.",
+    "fallback": "I'm a Google Cloud Certified Professional Data Engineer, which backs up the cloud data work I do every day."
+  },
+  "about": {
+    "fallback": "Data Engineer with 4+ years spent building scalable pipelines, reliable data marts, and analytics-ready datasets in the cloud."
+  },
+  "default": "Ask me about my background, skills, experience, projects, education, or certifications."
+}
